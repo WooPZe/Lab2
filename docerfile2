@@ -1,0 +1,8 @@
+FROM debian
+RUN apt-get update
+RUN apt install gcc gdb gcc-multilib nano -y
+COPY IZassembler.s .
+COPY IZC.c .
+RUN gcc -m32 -no-pie IZassembler.s -o IZassembler
+RUN gcc IZC.c -o IZC
+CMD ./IZassembler && ./IZC
