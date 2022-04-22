@@ -18,7 +18,7 @@ jg ok
 notl (%ebx)
 addl $1, (%ebx)
 ok:
-add (%ebx), %ecx
+addl (%ebx), %ecx
 addl $4, %ebx
 movl (%ebx), %eax
 bound:
